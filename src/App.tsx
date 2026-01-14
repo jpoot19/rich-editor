@@ -1,33 +1,25 @@
+
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import RichTextEditor from './RichTextEditor/RichTextEditor'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [content, setContent] = useState<string>("Type your text here...")
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div style={{ maxWidth: '800px', margin: '40px auto', fontFamily: 'sans-serif' }}>
+        <h1>Editor WYSIWYG React + TS</h1>
+
+        <div style={{ marginBottom: '20px' }}>
+          <RichTextEditor
+            content={content}
+            onChange={(newHtml) => setContent(newHtml)}
+            editable={true}
+          />
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
