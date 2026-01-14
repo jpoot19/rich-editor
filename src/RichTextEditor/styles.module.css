@@ -1,0 +1,50 @@
+.editorWrapper {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden; /* Para que el contenido no se salga de las esquinas redondeadas */
+    background: white;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .editorContent {
+    padding: 20px;
+    min-height: 200px;
+  }
+  
+  /* TipTap styles hack para modules */
+  .editorContent :global(.ProseMirror) {
+    outline: none;
+  }
+  .editorContent :global(.ProseMirror p) {
+    margin-bottom: 1em;
+  }
+
+
+  .menuBar {
+    background-color: #f8fafc;
+    padding: 8px;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    gap: 8px;
+  }
+  
+  .menuButton {
+    padding: 6px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    background: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+  }
+  
+  .menuButton:hover {
+    background-color: #f1f5f9;
+  }
+  
+  .isActive {
+    background-color: #334155; /* Color oscuro */
+    color: white;
+    border-color: #334155;
+  }
